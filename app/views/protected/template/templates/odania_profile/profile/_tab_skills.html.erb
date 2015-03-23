@@ -1,0 +1,24 @@
+<div class="well">
+	<h3>Skills</h3>
+
+	<div class="form-group">
+		<div class="skill-selection">
+			Name: <input type="text" data-ng-model="addSkillInput" name="skill_ids" />
+			&nbsp;&nbsp;&nbsp;
+			Percent: <input type="text" data-ng-model="addSkillPercent" name="skill_percents" />
+			<button class="btn btn-default" data-ng-click="addToArray(profile.skillSelection, [addSkillInput, addSkillPercent]);">
+				Add
+			</button>
+
+			<p class="form-control">
+			<span data-ng-repeat="skill in profile.skillSelection">
+				<a data-ng-click="profile.skillSelection.splice($index, 1);">
+					<i class="fa fa-minus-square"></i>
+				</a> {{ skill[0] }} - {{ skill[1] }}%
+			</span>
+			</p>
+		</div>
+	</div>
+
+	<span data-ng-if="errors.skills" style="color: red;">{{ printErrors(errors.skills) }}</span>
+</div>
