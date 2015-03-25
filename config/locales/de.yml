@@ -2,3 +2,6 @@ de:
   protected:
     menu:
       Personal Profile: 'Profil'
+  odania_profile:
+    skills: 'Fähigkeiten'
+    current_image: 'Momentanes Bild'

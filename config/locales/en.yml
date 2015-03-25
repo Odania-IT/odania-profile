@@ -2,3 +2,6 @@ en:
   protected:
     menu:
       Personal Profile: 'Profile'
+  odania_profile:
+    skills: 'Skills'
+    current_image: 'Current image'

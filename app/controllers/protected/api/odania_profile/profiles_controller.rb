@@ -16,7 +16,7 @@ class Protected::Api::OdaniaProfile::ProfilesController < Protected::ApiControll
 	private
 
 	def profile_attributes
-		params.require(:profile).permit(:title, :name, :profession, :description, :published, :social => [:linked_in, :facebook, :google_plus, :twitter, :rss])
+		params.require(:profile).permit(:title, :name, :profession, :description, :published, :image, :social => [:linked_in, :facebook, :google_plus, :twitter, :rss])
 	end
 
 	def load_profile
@@ -29,10 +29,14 @@ class Protected::Api::OdaniaProfile::ProfilesController < Protected::ApiControll
 	def update_skills
 		skill_ids = []
 		unless params[:profile][:skillSelection].nil?
-			params[:profile][:skillSelection].each do |data|
+			params[:profile][:skillSelection].split(',').each do |data|
+				data = data.split(':')
+
 				skill = @profile.skills.where(name: data[0]).first
 				skill = @profile.skills.new(name: data[0]) if skill.nil?
-				skill.percent = data[1]
+				skill.percent = data[1].to_i
+				skill.percent = 0 if skill.percent < 0
+				skill.percent = 100 if skill.percent > 100
 				skill.save!
 				skill_ids << skill.id
 			end

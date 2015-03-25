@@ -1,0 +1,7 @@
+<ul>
+	<% @profiles.each do |profile| %>
+		<li>
+			<%= link_to profile.title, odania_profile_path(id: profile.to_param, locale: I18n.locale.to_s) %>
+		</li>
+	<% end %>
+</ul>

@@ -22,3 +22,26 @@
 		<span data-ng-if="errors.profession" style="color: red;">{{ printErrors(errors.profession) }}</span>
 	</div>
 </div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Image</label>
+
+	<div class="col-sm-10">
+		<div data-ng-if="media.image_thumb_url">
+			<%= t('odania_profile.current_image') %>
+			<img data-ng-src="{{ media.image_thumb_url }}" alt="{{ media.title }}" title="{{ media.title }}"/>
+		</div>
+
+		<div data-ng-if="upload.file">
+			<span>{{ upload.file.webkitRelativePath || upload.file.name }}</span>
+			(
+				<span ng-switch="upload.file.size > 1024*1024">
+					<span ng-switch-when="true">{{upload.file.size / 1024 / 1024 | number:2}} MB</span>
+					<span ng-switch-default>{{upload.file.size / 1024 | number:2}} kB</span>
+				</span>
+			)
+		</div>
+
+		<input type="file" data-ng-model-instant onchange="angular.element(this).scope().setFile(this)" />
+		<span data-ng-if="errors.image" style="color: red;">{{ printErrors(errors.image) }}</span>
+	</div>
+</div>

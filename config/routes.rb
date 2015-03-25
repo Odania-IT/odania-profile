@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 			get 'profiles' => 'profiles#index'
 			post 'profiles' => 'profiles#update'
 		end
-
-		resources :profiles, only: [:index, :show]
 	end
 
 	namespace :protected do
@@ -14,6 +12,13 @@ Rails.application.routes.draw do
 				get 'profiles' => 'profiles#index'
 				post 'profiles' => 'profiles#update'
 			end
+		end
+	end
+
+	scope '/:locale', constraints: {locale: /[a-z][a-z]/} do
+		namespace :odania_profile do
+			get 'profiles' => 'profiles#index'
+			get 'profiles/:id' => 'profiles#show'
 		end
 	end
 end

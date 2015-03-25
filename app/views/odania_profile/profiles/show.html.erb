@@ -1,0 +1,46 @@
+<% content_for(:page_header) do %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-push-6">
+				<h1 class="animated fadeInDown animation-delay-1"><%= @profile.name %></h1>
+
+				<h2 class="animated fadeInDown animation-delay-2"><%= @profile.profession %></h2>
+
+				<div class="profile-header-btn text-center">
+					<a href="#" class="btn btn-ar btn-primary btn-lg"><i class="fa fa-desktop"></i> View Portfolio</a>
+					<a href="#" class="btn btn-ar btn-danger btn-lg"><i class="fa fa-download"></i> Download CV</a>
+				</div>
+				<div class="profile-header-social">
+					<%= render partial: 'odania/common/social', locals: {social: @profile.social} %>
+				</div>
+			</div>
+			<div class="col-md-6 col-md-pull-6">
+				<div class="home-profile-img center-block text-center animated fadeInDown animation-delay-6">
+					<%= image_tag @profile.image.url(:medium), {alt: @profile.name, title: @profile.title} %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+<div class="container margin-bottom">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="right-line no-margin-bottom"><%= @profile.title %></h2>
+		</div>
+		<div class="col-md-6 animated fadeInLeft animation-delay-8">
+			<%=raw @profile.description %>
+		</div>
+		<div class="col-md-6">
+			<h3><%= t('odania_profile.skills') %></h3>
+
+			<% @profile.skills.each do |skill| %>
+				<div class="progress progress-lg">
+					<div class="progress-bar" role="progressbar" aria-valuenow="<%= skill.percent %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= skill.percent %>%;">
+						<%= skill.name %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div> <!-- container -->
