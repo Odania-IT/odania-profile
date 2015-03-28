@@ -4,6 +4,7 @@ class OdaniaProfile::Profile < ActiveRecord::Base
 	belongs_to :user, class_name: 'Odania::User'
 	belongs_to :language, class_name: 'Odania::Language'
 	has_many :skills, class_name: 'OdaniaProfile::Skill'
+	belongs_to :timeline, class_name: 'OdaniaTimeline::Timeline'
 
 	has_attached_file :image, :styles => {:medium => '300x300>', :thumb => '100x100>'},
 							default_url: '/images/odania_profile/defaults/profile_:style.jpg'

@@ -2,6 +2,7 @@ class Protected::Api::OdaniaProfile::ProfilesController < Protected::ApiControll
 	before_action :load_profile
 
 	def index
+		@timelines = OdaniaTimeline::Timeline.where(user_id: current_user.id, language_id: @profile.language_id)
 	end
 
 	def update
@@ -16,7 +17,7 @@ class Protected::Api::OdaniaProfile::ProfilesController < Protected::ApiControll
 	private
 
 	def profile_attributes
-		params.require(:profile).permit(:title, :name, :profession, :description, :published, :image, :social => [:linked_in, :facebook, :google_plus, :twitter, :rss])
+		params.require(:profile).permit(:title, :name, :profession, :description, :published, :image, :timeline_id, :social => [:linked_in, :facebook, :google_plus, :twitter, :rss])
 	end
 
 	def load_profile

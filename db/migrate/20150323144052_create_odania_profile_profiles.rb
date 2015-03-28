@@ -4,6 +4,7 @@ class CreateOdaniaProfileProfiles < ActiveRecord::Migration
 			t.references :user, index: true
 			t.references :language, index: true
 			t.references :site, index: true
+			t.references :timeline, index: true
 			t.string :title
 			t.string :name
 			t.string :profession
@@ -15,6 +16,7 @@ class CreateOdaniaProfileProfiles < ActiveRecord::Migration
 		add_foreign_key :odania_profile_profiles, :odania_sites, column: :site_id
 		add_foreign_key :odania_profile_profiles, :odania_users, column: :user_id
 		add_foreign_key :odania_profile_profiles, :odania_languages, column: :language_id
+		add_foreign_key :odania_profile_profiles, :odania_timeline_timelines, column: :timeline_id
 		add_attachment :odania_profile_profiles, :image
 	end
 end

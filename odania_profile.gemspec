@@ -13,9 +13,10 @@ Gem::Specification.new do |s|
 	s.summary = 'Odania Portal Template: ArtificalReason'
 	s.description = 'The Odania Portal is an open source portal system with strong focus on the usage on different domains with different layout/setup.'
 
-	s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.rdoc']
+	s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 	s.test_files = Dir['test/**/*']
 
 	s.add_dependency 'rails'
 	s.add_dependency 'odania_core'
+	s.add_dependency 'odania_timeline'
 end

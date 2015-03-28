@@ -5,6 +5,7 @@ app.controller('OdaniaProfileEditProfileController', ['$location', '$scope', '$r
 		OdaniaProfileProfileResource.get().$promise.then(function (data) {
 			$scope.profile = data.profile;
 			$scope.profile.skillSelection = prepareSkillData(data.profile.skills);
+			$scope.data = data.data;
 		});
 	}
 

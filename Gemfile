@@ -20,8 +20,7 @@ group :development, :test do
 	gem 'ffaker'
 	gem 'assert_difference'
 
-	#gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git'
-	gem 'odania_core', path: '/home/mike/workspace/OdaniaPortal/OdaniaCore'
+	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git'
 
 	# Necessary for travis
 	platforms :jruby do
@@ -37,37 +36,4 @@ group :development, :test do
 		gem 'pg'
 	end
 end
-
-
-gem 'odania_mac_beath_template', path: '/home/mike/workspace/OdaniaPortal/odania_mac_beath_template'
-gem 'odania_artificial_reason_template', path: '/home/mike/workspace/OdaniaPortal/odania_artificial_reason_template'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
