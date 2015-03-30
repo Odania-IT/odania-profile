@@ -1,3 +1,7 @@
-= OdaniaProfile
+= Odania Profile
+
+Odania Profile is a plugin for the Odania Portal. It gives the user the possibility to define and display profiles.
+
+Active the plugin "odania_profile" in the admin tool for a site. Afterwords you can define the data in the protected area.
 
 This project rocks and uses MIT-LICENSE.
