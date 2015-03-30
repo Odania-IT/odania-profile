@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328144927) do
+ActiveRecord::Schema.define(version: 20150323151752) do
 
   create_table "odania_categories", force: :cascade do |t|
     t.integer  "site_id"

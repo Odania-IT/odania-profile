@@ -36,11 +36,11 @@ RSpec.describe Protected::Api::OdaniaProfile::ProfilesController, :type => :cont
 					post :update, {format: :json, profile: {title: profile.title, published: false,
 																		 name: FFaker::Internet.user_name, profession: FFaker::Job.title,
 																		 description: FFaker::HTMLIpsum.body, timeline_id: timeline.id, skillSelection: [
-											[FFaker::Movie.title, rand(100)].join(':'),
-											[FFaker::Movie.title, rand(100)].join(':'),
-											[FFaker::Movie.title, rand(100)].join(':'),
-											[FFaker::Movie.title, rand(100)].join(':'),
-											[FFaker::Movie.title, rand(100)].join(':')
+											['Skill1', rand(100)].join(':'),
+											['Skill2', rand(100)].join(':'),
+											['Skill3', rand(100)].join(':'),
+											['Skill4', rand(100)].join(':'),
+											['Skill5', rand(100)].join(':')
 										].join(',')}}
 				end
 			end
