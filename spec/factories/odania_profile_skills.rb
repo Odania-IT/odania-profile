@@ -1,7 +1,7 @@
 FactoryGirl.define do
-	factory :odania_profile_skill, :class => 'OdaniaProfile::Skill' do
+	factory :profile_skill, :class => 'OdaniaProfile::Skill' do
 		profile
-		name "MyString"
+		name { FFaker::Name.name }
 		percent { rand(100) }
 	end
 

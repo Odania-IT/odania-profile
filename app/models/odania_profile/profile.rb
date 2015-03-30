@@ -1,6 +1,7 @@
 class OdaniaProfile::Profile < ActiveRecord::Base
 	serialize :social, JSON
 
+	belongs_to :site, :class_name => 'Odania::Site'
 	belongs_to :user, class_name: 'Odania::User'
 	belongs_to :language, class_name: 'Odania::Language'
 	has_many :skills, class_name: 'OdaniaProfile::Skill'

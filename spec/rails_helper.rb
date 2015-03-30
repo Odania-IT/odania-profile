@@ -1,12 +1,15 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV["RAILS_ENV"] ||= 'test'
+ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../dummy/config/environment', __FILE__)
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+Dir[Rails.root.join('../../spec/factories/**/*.rb')].each { |f| require f }
+Dir["#{Gem.loaded_specs['odania_core'].full_gem_path}/test/factories/**/*.rb"].each { |f| require f }
+Dir["#{Gem.loaded_specs['odania_timeline'].full_gem_path}/spec/factories/**/*.rb"].each { |f| require f }
 
-# Add additional requires below this line. Rails is not loaded until this point!
-Dir[Rails.root.join("#{Gem.loaded_specs['odania_core'].full_gem_path}/test/factories/**/*.rb")].each { |f| require f }
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -31,9 +34,6 @@ RSpec.configure do |config|
 	config.include FactoryGirl::Syntax::Methods
 	config.include AssertDifference
 
-	# Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-	config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
 	# If you're not using ActiveRecord, or you'd prefer not to run each of your
 	# examples within a transaction, remove the following line or assign false
 	# instead of true.
@@ -57,7 +57,6 @@ RSpec.configure do |config|
 	config.before(:suite) do
 		begin
 			DatabaseCleaner.start
-			#FactoryGirl.lint
 		ensure
 			DatabaseCleaner.clean
 		end

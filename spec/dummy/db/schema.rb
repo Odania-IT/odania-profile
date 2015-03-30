@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328172606) do
+ActiveRecord::Schema.define(version: 20150328144927) do
 
   create_table "odania_categories", force: :cascade do |t|
     t.integer  "site_id"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20150328172606) do
     t.integer  "user_id"
     t.integer  "language_id"
     t.integer  "site_id"
+    t.integer  "timeline_id"
     t.string   "title"
     t.string   "name"
     t.string   "profession"
@@ -132,11 +133,11 @@ ActiveRecord::Schema.define(version: 20150328172606) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "timeline_id"
   end
 
   add_index "odania_profile_profiles", ["language_id"], name: "index_odania_profile_profiles_on_language_id"
   add_index "odania_profile_profiles", ["site_id"], name: "index_odania_profile_profiles_on_site_id"
+  add_index "odania_profile_profiles", ["timeline_id"], name: "index_odania_profile_profiles_on_timeline_id"
   add_index "odania_profile_profiles", ["user_id"], name: "index_odania_profile_profiles_on_user_id"
 
   create_table "odania_profile_skills", force: :cascade do |t|

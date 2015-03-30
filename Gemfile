@@ -21,6 +21,7 @@ group :development, :test do
 	gem 'assert_difference'
 
 	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git'
+	gem 'odania_timeline', git: 'https://github.com/Odania-IT/odania-timeline.git'
 
 	# Necessary for travis
 	platforms :jruby do
@@ -37,3 +38,4 @@ group :development, :test do
 	end
 end
 
+gem 'codeclimate-test-reporter', group: :test, require: nil
