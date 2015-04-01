@@ -1,4 +1,6 @@
 class OdaniaProfile::ProfilesController < ApplicationController
+	before_action :valid_site!
+
 	def index
 		@profiles = OdaniaProfile::Profile.where(published: true).order('updated_at DESC')
 	end

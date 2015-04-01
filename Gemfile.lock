@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/Odania-IT/odania-timeline.git
-  revision: aab95cc15d4a6a276ae4505e2eedd27d05ce4ee4
+  revision: 3dd1cd000af983f6540873e3f2bc9c2d53589961
   specs:
     odania_timeline (0.0.3)
       odania_core
@@ -200,7 +200,7 @@ GEM
     sanitize (2.1.0)
       nokogiri (>= 1.4.4)
     sass (3.4.13)
-    sass-rails (5.0.2)
+    sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)

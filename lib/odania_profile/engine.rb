@@ -19,12 +19,12 @@ module OdaniaProfile
 
 		# Add content types
 		Odania::TargetType.targets['PROFILES'] = {type: 'PROFILES',
-										module: 'OdaniaProfile::EngineTargetType', validator_func: 'validate_profiles',
-										render_func: '', selector: 'protected/odania_profile/profiles/choose_profiles',
-										initial_data: 'admin/api/menu_items/empty_inital_data'}
+																module: 'OdaniaProfile::EngineTargetType', validator_func: 'validate_profiles',
+																render_func: '', selector: 'protected/odania_profile/profiles/choose_profiles',
+																initial_data: 'admin/api/menu_items/empty_inital_data'}
 		Odania::TargetType.targets['PROFILE'] = {type: 'PROFILE',
-										module: 'OdaniaProfile::EngineTargetType', validator_func: 'validate_profile',
-										render_func: '', selector: 'protected/odania_profile/profiles/choose_profile',
-										initial_data: 'protected/api/odania_profile/profiles/inital_data'}
+															  module: 'OdaniaProfile::EngineTargetType', validator_func: 'validate_profile',
+															  render_func: '', selector: 'protected/odania_profile/profiles/choose_profile',
+															  initial_data: 'protected/api/odania_profile/profiles/inital_data'}
 	end
 end
