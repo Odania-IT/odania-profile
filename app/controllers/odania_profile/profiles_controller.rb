@@ -1,5 +1,5 @@
 class OdaniaProfile::ProfilesController < ApplicationController
-	before_action :valid_site!
+	before_action :valid_site!, :valid_menu!
 
 	def index
 		@profiles = OdaniaProfile::Profile.where(published: true).order('updated_at DESC')
