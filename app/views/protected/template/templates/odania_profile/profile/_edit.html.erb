@@ -3,12 +3,12 @@
 		<div class="col-md-9">
 			<h1>Editing Site {{ site.name }}</h1>
 
-			<tabset>
-				<tab heading="General"><%= render partial: '/protected/template/templates/odania_profile/profile/tab_general' %></tab>
-				<tab heading="Description"><%= render partial: '/protected/template/templates/odania_profile/profile/tab_description' %></tab>
-				<tab heading="Social"><%= render partial: '/protected/template/templates/odania_profile/profile/tab_social' %></tab>
-				<tab heading="Skills"><%= render partial: '/protected/template/templates/odania_profile/profile/tab_skills' %></tab>
-			</tabset>
+			<uib-tabset>
+				<uib-tab heading="General"><%= render partial: '/protected/template/templates/odania_profile/profile/tab_general' %></uib-tab>
+				<uib-tab heading="Description"><%= render partial: '/protected/template/templates/odania_profile/profile/tab_description' %></uib-tab>
+				<uib-tab heading="Social"><%= render partial: '/protected/template/templates/odania_profile/profile/tab_social' %></uib-tab>
+				<uib-tab heading="Skills"><%= render partial: '/protected/template/templates/odania_profile/profile/tab_skills' %></uib-tab>
+			</uib-tabset>
 		</div>
 		<div class="col-md-3">
 			<div class="form-group">
