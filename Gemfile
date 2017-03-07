@@ -20,7 +20,7 @@ group :development, :test do
 	gem 'ffaker'
 	gem 'assert_difference'
 
-	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git'
+	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git', branch: 'develop'
 	gem 'odania_timeline', git: 'https://github.com/Odania-IT/odania-timeline.git'
 
 	# Necessary for travis
@@ -36,6 +36,8 @@ group :development, :test do
 		gem 'mysql2'
 		gem 'pg'
 	end
+
+	gem 'rails-controller-testing'
 end
 
 gem 'codeclimate-test-reporter', group: :test, require: nil

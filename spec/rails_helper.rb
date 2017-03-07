@@ -8,9 +8,6 @@ Dir[Rails.root.join('../../spec/factories/**/*.rb')].each { |f| require f }
 Dir["#{Gem.loaded_specs['odania_core'].full_gem_path}/test/factories/**/*.rb"].each { |f| require f }
 Dir["#{Gem.loaded_specs['odania_timeline'].full_gem_path}/spec/factories/**/*.rb"].each { |f| require f }
 
-require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
-
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end

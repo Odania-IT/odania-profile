@@ -19,4 +19,6 @@ Gem::Specification.new do |s|
 	s.add_dependency 'rails'
 	s.add_dependency 'odania_core'
 	s.add_dependency 'odania_timeline'
+
+	s.add_development_dependency 'rails-controller-testing'
 end

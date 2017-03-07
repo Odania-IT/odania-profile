@@ -11,7 +11,7 @@ RSpec.describe OdaniaProfile::ProfilesController, :type => :controller do
 
 	context 'public display' do
 		it 'should display public profiles' do
-			get :index, {locale: @language.iso_639_1}
+			get :index, params: {locale: @language.iso_639_1}
 
 			expect(response).to be_success
 			expect(response).to render_template('odania_profile/profiles/index')
@@ -19,13 +19,13 @@ RSpec.describe OdaniaProfile::ProfilesController, :type => :controller do
 
 		it 'should display profile' do
 			profile = create(:profile, :with_skills,  user: OdaniaTestMock.current_user, site: @site, language: @language, published: false)
-			get :show, {id: profile.id, locale: @language.iso_639_1}
+			get :show, params: {id: profile.id, locale: @language.iso_639_1}
 
 			expect(response.response_code).to be(302)
 		end
 
 		it 'should display profile' do
-			get :show, {id: @profile.id, locale: @language.iso_639_1}
+			get :show, params: {id: @profile.id, locale: @language.iso_639_1}
 
 			expect(response).to be_success
 			expect(response).to render_template('odania_profile/profiles/show')

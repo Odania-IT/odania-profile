@@ -12,16 +12,16 @@ RSpec.describe Protected::Api::OdaniaProfile::ProfilesController, :type => :cont
 	context 'when not logged in' do
 		it 'should give unauthorized' do
 			OdaniaTestMock.signed_in = false
-			get :index, {format: :json}
+			get :index, params: {format: :json}
 			OdaniaTestMock.signed_in = true
 
-			expect(response.response_code).to be(302)
+			expect(response.response_code).to be(401)
 		end
 	end
 
 	context 'when logged in' do
 		it 'should list profiles' do
-			get :index, {format: :json}
+			get :index, params: {format: :json}
 
 			expect(response).to be_success
 			expect(response).to render_template('protected/api/odania_profile/profiles/index')
@@ -33,7 +33,7 @@ RSpec.describe Protected::Api::OdaniaProfile::ProfilesController, :type => :cont
 
 			assert_difference 'OdaniaProfile::Profile.count' do
 				assert_difference 'OdaniaProfile::Skill.count', 5 do
-					post :update, {format: :json, profile: {title: profile.title, published: false,
+					post :update, params: {format: :json, profile: {title: profile.title, published: false,
 																		 name: FFaker::Internet.user_name, profession: FFaker::Job.title,
 																		 description: FFaker::HTMLIpsum.body, timeline_id: timeline.id, skillSelection: [
 											['Skill1', rand(100)].join(':'),
